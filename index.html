@@ -15,15 +15,23 @@
     <div class="container nav">
       <a class="logo" href="#top">Mlýn Kasárníkův</a>
 
-      <nav class="menu">
-        <a href="#o-mlyne">O mlýně</a>
-        <a href="#historie">Historie</a>
-        <a href="#kronika">Kronika</a>
-        <a href="#galerie">Galerie</a>
-        <a href="#kontakt">Kontakt</a>
-      </nav>
+      <button class="hamburger" aria-label="Otevřít menu" aria-expanded="false">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
 
-      <a class="btn btn-primary" href="#kontakt">Kontakt</a>
+      <div class="mobile-menu">
+        <nav class="menu">
+          <a href="#o-mlyne">O mlýně</a>
+          <a href="#historie">Historie</a>
+          <a href="#kronika">Kronika</a>
+          <a href="#galerie">Galerie</a>
+          <a href="#kontakt">Kontakt</a>
+        </nav>
+      </div>
+
+      <a class="btn btn-primary cta-desktop" href="#kontakt">Kontakt</a>
     </div>
   </header>
 
@@ -329,7 +337,24 @@
       if (e.key === 'ArrowRight') showNext();
     });
 
-    
+    // HAMBURGER MENU
+    const hamburger = document.querySelector('.hamburger');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const menuLinks = document.querySelectorAll('.mobile-menu .menu a');
+
+    hamburger?.addEventListener('click', () => {
+      hamburger.classList.toggle('is-active');
+      mobileMenu.classList.toggle('is-active');
+      document.body.style.overflow = mobileMenu.classList.contains('is-active') ? 'hidden' : '';
+    });
+
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('is-active');
+        mobileMenu.classList.remove('is-active');
+        document.body.style.overflow = '';
+      });
+    });
 
   </script>
 

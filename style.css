@@ -1,9 +1,3 @@
-/* =========================================
-   Mlýn Kasárníkův – HISTORICKÝ / KRONIKA STYL
-   Hero: menší + mobil: fotka rozumně vidět (contain)
-   + Thumbnails dole (klikatelné i na mobilu)
-   ========================================= */
-
 :root{
   --paper: #f6f1e6;
   --paper2:#efe7d8;
@@ -85,6 +79,7 @@ p{ margin: 0 0 12px; }
   background: rgba(246,241,230,.82);
   border-bottom: 1px solid var(--stroke);
 }
+
 .nav{
   display: flex;
   align-items: center;
@@ -92,12 +87,15 @@ p{ margin: 0 0 12px; }
   gap: 16px;
   padding: 14px 0;
 }
+
 .logo{
   font-weight: 900;
   text-decoration: none;
   color: var(--ink);
   font-family: Georgia, "Times New Roman", Times, serif;
 }
+
+/* Desktop menu */
 .menu{
   display: flex;
   gap: 14px;
@@ -149,8 +147,6 @@ p{ margin: 0 0 12px; }
 /* ===== HERO SLIDER (zmenšený) ===== */
 .hero-slider{
   position: relative;
-
-  /* menší než 100vh */
   height: clamp(520px, 72vh, 760px);
   overflow: hidden;
   border-bottom: 1px solid var(--stroke);
@@ -172,7 +168,6 @@ p{ margin: 0 0 12px; }
 }
 .slide.is-active{ opacity: 1; }
 
-/* jemný zoom desktop */
 @keyframes kenburns {
   from { transform: scale(1.06) translateX(0); }
   to   { transform: scale(1.12) translateX(-1%); }
@@ -187,7 +182,6 @@ p{ margin: 0 0 12px; }
     linear-gradient(180deg, rgba(0,0,0,.58), rgba(0,0,0,.20), rgba(0,0,0,.62));
 }
 
-/* jemný film grain */
 .hero-slider::after{
   content:"";
   position:absolute;
@@ -208,7 +202,7 @@ p{ margin: 0 0 12px; }
   display: grid;
   align-content: center;
   gap: 10px;
-  padding: 96px 0 80px; /* spodní prostor pro thumbnails */
+  padding: 96px 0 80px;
   color: #fff;
 }
 
@@ -233,7 +227,6 @@ p{ margin: 0 0 12px; }
   gap: 12px;
   margin-top: 10px;
 }
-
 .hero-meta{
   margin-top: 12px;
   display: inline-flex;
@@ -428,7 +421,7 @@ input:focus, textarea:focus{
 }
 .form button{ width: 100%; padding: 13px 16px; }
 
-/* Map (když bude iframe, dej mu class responsive-map) */
+/* Map */
 .map-placeholder{
   margin-top: 10px;
   border-radius: 16px;
@@ -514,6 +507,59 @@ input:focus, textarea:focus{
 .lightbox-prev{ left: 0; }
 .lightbox-next{ right: 0; }
 
+/* ===== Hamburger ===== */
+.hamburger{
+  display: none; /* desktop hidden */
+  position: relative;
+  z-index: 1002;
+  padding: 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.hamburger-box{
+  width: 28px;
+  height: 20px;
+  display: inline-block;
+  position: relative;
+}
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after{
+  width: 100%;
+  height: 3px;
+  background-color: var(--ink);
+  border-radius: 4px;
+  position: absolute;
+  transition: transform .2s ease-in-out, opacity .2s ease-in-out;
+}
+.hamburger-inner{
+  top: 50%;
+  transform: translateY(-50%);
+}
+.hamburger-inner::before,
+.hamburger-inner::after{
+  content: '';
+}
+.hamburger-inner::before{ top: -8px; }
+.hamburger-inner::after{ top: 8px; }
+
+.hamburger.is-active .hamburger-inner{
+  transform: translateY(-50%) rotate(45deg);
+}
+.hamburger.is-active .hamburger-inner::before{
+  top: 0;
+  transform: rotate(-90deg);
+}
+.hamburger.is-active .hamburger-inner::after{
+  opacity: 0;
+}
+
+/* Mobile Menu Wrapper (default hidden) */
+.mobile-menu{
+  display: none; /* desktop: not used */
+}
+
 /* Responsive */
 @media (max-width: 980px){
   .two-col{ grid-template-columns: 1fr; }
@@ -521,12 +567,74 @@ input:focus, textarea:focus{
   .news{ grid-template-columns: 1fr; }
 
   .hero-arrow{ display:none; }
-  .menu{ display:none; } /* zatím */
   .hero-content{ padding-top: 110px; }
-  .hero-thumbs{ justify-content: flex-start; } /* mobil scroll */
+  .hero-thumbs{ justify-content: flex-start; }
+
+  /* Show hamburger */
+  .hamburger{ display: block; }
+
+  /* Hide desktop nav links block visually (menu stays for desktop only) */
+  header .nav > .menu{
+    display: none;
+  }
+
+  /* FULL-SCREEN MOBILE MENU (full width) */
+  .mobile-menu{
+    display: block;
+    position: fixed;
+    inset: 0;                /* top:0 right:0 bottom:0 left:0 */
+    width: 100vw;            /* full width */
+    height: 100vh;           /* full height */
+    background: rgba(239,231,216,.98);
+    backdrop-filter: blur(8px);
+    z-index: 1001;
+
+    /* hidden state */
+    transform: translateX(-100%);
+    transition: transform .28s ease-in-out;
+    padding: 86px 22px 24px;
+    overflow-y: auto;
+  }
+
+  .mobile-menu.is-active{
+    transform: translateX(0);
+  }
+
+  /* Menu inside mobile overlay */
+  .mobile-menu .menu{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .mobile-menu .menu a{
+    display: block;
+    width: 100%;
+    font-size: 1.35rem;
+    padding: 14px 12px;
+    border-radius: 14px;
+    background: rgba(255,255,255,.55);
+    border: 1px solid rgba(0,0,0,.10);
+  }
+
+  .mobile-menu .menu a:hover{
+    background: rgba(255,255,255,.75);
+  }
+
+  /* optional: button v menu */
+  .mobile-menu .btn{
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  /* lock scroll when menu open (add class on body via JS) */
+  body.menu-open{
+    overflow: hidden;
+  }
 }
 
-/* Mobil: fotka “rozumně vidět” (celá), hero menší */
 @media (max-width: 640px){
   .hero-slider{
     height: clamp(460px, 68vh, 620px);
