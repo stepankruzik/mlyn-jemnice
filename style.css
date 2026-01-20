@@ -1,24 +1,24 @@
+/* =========================================
+   Mlýn Kasárníkův – HISTORICKÝ / KRONIKA STYL
+   Hero: menší + mobil: fotka rozumně vidět (contain)
+   + Thumbnails dole (klikatelné i na mobilu)
+   ========================================= */
+
 :root{
-  /* Paper + ink */
   --paper: #f6f1e6;
   --paper2:#efe7d8;
   --ink: #1b1b1b;
-  --muted:#4b4b4b;
 
-  /* Wood / brass accents */
   --wood: #7a5536;
   --wood2:#a97a4b;
-  --brass:#b08a3b;
 
   --stroke: rgba(0,0,0,.12);
-  --card: rgba(255,255,255,.72);
-  --shadow: 0 18px 45px rgba(0,0,0,.12);
-
   --radius: 18px;
 }
 
 *{ box-sizing: border-box; }
 html{ scroll-behavior: smooth; }
+
 body{
   margin: 0;
   color: var(--ink);
@@ -35,14 +35,13 @@ body::before{
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background:
-    repeating-linear-gradient(
-      0deg,
-      rgba(0,0,0,.02),
-      rgba(0,0,0,.02) 1px,
-      transparent 1px,
-      transparent 6px
-    );
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0,0,0,.02),
+    rgba(0,0,0,.02) 1px,
+    transparent 1px,
+    transparent 6px
+  );
   opacity: .12;
   mix-blend-mode: multiply;
 }
@@ -59,10 +58,10 @@ h1,h2,h3{
   margin: 0 0 12px;
   line-height: 1.15;
   letter-spacing: -0.01em;
-  font-family: Georgia, "Times New Roman", Times, serif; /* kronika */
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
-h1{ font-size: clamp(2rem, 4vw, 3.3rem); }
-h2{ font-size: clamp(1.5rem, 2.6vw, 2.15rem); }
+h1{ font-size: clamp(2rem, 4vw, 3.15rem); }
+h2{ font-size: clamp(1.45rem, 2.6vw, 2.10rem); }
 h3{ font-size: 1.2rem; }
 
 p{ margin: 0 0 12px; }
@@ -83,7 +82,7 @@ p{ margin: 0 0 12px; }
   top: 0;
   z-index: 50;
   backdrop-filter: blur(10px);
-  background: rgba(246,241,230,.78);
+  background: rgba(246,241,230,.82);
   border-bottom: 1px solid var(--stroke);
 }
 .nav{
@@ -131,17 +130,12 @@ p{ margin: 0 0 12px; }
   transition: 160ms ease;
   user-select: none;
 }
-
 .btn-primary{
   background: linear-gradient(180deg, var(--wood2), var(--wood));
   color: #fff;
   border-color: rgba(0,0,0,.12);
-  box-shadow: 0 14px 26px rgba(122,85,54,.18);
 }
-.btn-primary:hover{
-  transform: translateY(-1px);
-  box-shadow: 0 20px 34px rgba(122,85,54,.22);
-}
+.btn-primary:hover{ transform: translateY(-1px); }
 .btn-ghost{
   background: rgba(255,255,255,.55);
   border-color: rgba(0,0,0,.16);
@@ -152,50 +146,25 @@ p{ margin: 0 0 12px; }
   background: rgba(255,255,255,.75);
 }
 
-/* ===== HERO SLIDER ===== */
+/* ===== HERO SLIDER (zmenšený) ===== */
 .hero-slider{
   position: relative;
-  height: 100vh;
-  min-height: 560px;
+
+  /* menší než 100vh */
+  height: clamp(520px, 72vh, 760px);
   overflow: hidden;
   border-bottom: 1px solid var(--stroke);
-}
-
-@media (max-width: 700px) {
-  .hero-slider {
-    height: 60vw;
-    min-height: 220px;
-    max-height: 340px;
-  }
-  .hero-content {
-    padding: 36px 0 24px;
-    gap: 4px;
-  }
-  .hero-content h1 {
-    font-size: 1.5rem;
-  }
-  .lead {
-    font-size: 0.98rem;
-    max-width: 90vw;
-  }
-  .kicker {
-    font-size: 0.92rem;
-    padding: 6px 10px;
-  }
-  .cta {
-    gap: 8px;
-  }
-}
+  background: #000;
 }
 
 .slides{ position: absolute; inset: 0; }
+
 .slide{
   position: absolute;
   inset: 0;
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #111;
   transform: scale(1.06);
   opacity: 0;
   transition: opacity 1200ms ease;
@@ -203,25 +172,22 @@ p{ margin: 0 0 12px; }
 }
 .slide.is-active{ opacity: 1; }
 
-/* jemný zoom */
+/* jemný zoom desktop */
 @keyframes kenburns {
   from { transform: scale(1.06) translateX(0); }
-  to   { transform: scale(1.14) translateX(-2%); }
+  to   { transform: scale(1.12) translateX(-1%); }
 }
-.slide.is-active{
-  animation: kenburns 7s ease-in-out forwards;
-}
+.slide.is-active{ animation: kenburns 7s ease-in-out forwards; }
 
-/* overlay jako  */
 .hero-overlay{
   position: absolute;
   inset: 0;
   background:
     radial-gradient(900px 520px at 20% 30%, rgba(0,0,0,.30), transparent 62%),
-    linear-gradient(180deg, rgba(0,0,0,.60), rgba(0,0,0,.25), rgba(0,0,0,.62));
+    linear-gradient(180deg, rgba(0,0,0,.58), rgba(0,0,0,.20), rgba(0,0,0,.62));
 }
 
-/* “vintage” film grain */
+/* jemný film grain */
 .hero-slider::after{
   content:"";
   position:absolute;
@@ -231,7 +197,7 @@ p{ margin: 0 0 12px; }
     radial-gradient(circle at 20% 30%, rgba(255,255,255,.10), transparent 35%),
     radial-gradient(circle at 80% 70%, rgba(255,255,255,.08), transparent 40%),
     repeating-linear-gradient(0deg, rgba(255,255,255,.03), rgba(255,255,255,.03) 1px, transparent 1px, transparent 7px);
-  opacity: .22;
+  opacity: .20;
   mix-blend-mode: overlay;
 }
 
@@ -242,7 +208,7 @@ p{ margin: 0 0 12px; }
   display: grid;
   align-content: center;
   gap: 10px;
-  padding: 96px 0 60px;
+  padding: 96px 0 80px; /* spodní prostor pro thumbnails */
   color: #fff;
 }
 
@@ -256,13 +222,11 @@ p{ margin: 0 0 12px; }
   color: rgba(255,255,255,.92);
   width: fit-content;
 }
-
 .lead{
-  font-size: 1.08rem;
+  font-size: 1.05rem;
   max-width: 62ch;
   color: rgba(255,255,255,.92);
 }
-
 .cta{
   display: flex;
   flex-wrap: wrap;
@@ -288,7 +252,7 @@ p{ margin: 0 0 12px; }
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 3;
+  z-index: 4;
   width: 46px;
   height: 46px;
   border-radius: 999px;
@@ -309,6 +273,53 @@ p{ margin: 0 0 12px; }
 .hero-arrow.prev{ left: 14px; }
 .hero-arrow.next{ right: 14px; }
 
+/* ===== THUMBNAILS BAR ===== */
+.hero-thumbs{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 14px;
+  z-index: 5;
+
+  display: flex;
+  gap: 10px;
+  padding: 0 14px 8px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+
+  justify-content: center; /* desktop */
+}
+.hero-thumbs::-webkit-scrollbar{ height: 8px; }
+.hero-thumbs::-webkit-scrollbar-thumb{
+  background: rgba(255,255,255,.18);
+  border-radius: 999px;
+}
+.hero-thumbs::-webkit-scrollbar-track{
+  background: rgba(0,0,0,.20);
+  border-radius: 999px;
+}
+
+.thumb{
+  flex: 0 0 auto;
+  width: 78px;
+  height: 52px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.22);
+  background: rgba(0,0,0,.25);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: 160ms ease;
+  opacity: .82;
+}
+.thumb:hover{ opacity: 1; transform: translateY(-1px); }
+.thumb.is-active{
+  opacity: 1;
+  border-color: rgba(255,255,255,.55);
+  box-shadow: 0 10px 26px rgba(0,0,0,.35);
+}
+
 /* Columns */
 .two-col{
   display: grid;
@@ -317,7 +328,7 @@ p{ margin: 0 0 12px; }
   align-items: start;
 }
 
-/* Cards (paper notes) */
+/* Cards */
 .card{
   padding: 18px;
   border-radius: var(--radius);
@@ -353,26 +364,24 @@ p{ margin: 0 0 12px; }
   border-color: rgba(122,85,54,.35);
 }
 
-/* ===== Gallery archivní fotografie*/
+/* ===== Gallery ===== */
 .gallery{
   margin-top: 18px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: 12px;
 }
-
-/* polaroid look */
 .gallery img{
   width: 100%;
   border-radius: 10px;
   background: #fff;
-  /*padding: 10px 10px 24px;*/         /* spodní “okraj” na popisek vibe */
   border: 1px solid rgba(0,0,0,.16);
   box-shadow: 0 14px 34px rgba(0,0,0,.14);
   object-fit: cover;
   aspect-ratio: 4/3;
   transition: 160ms ease;
   filter: grayscale(.08) contrast(1.02);
+  cursor: pointer;
 }
 .gallery img:hover{
   transform: translateY(-2px) rotate(-.2deg);
@@ -387,7 +396,7 @@ p{ margin: 0 0 12px; }
 .gallery img:nth-child(5){ grid-column: span 4; transform: rotate(.5deg); }
 .gallery img:nth-child(6){ grid-column: span 12; aspect-ratio: 21/9; transform: rotate(-.2deg); }
 
-/* News / kronika cards */
+/* News */
 .news{
   margin-top: 18px;
   display: grid;
@@ -402,7 +411,6 @@ p{ margin: 0 0 12px; }
   margin-bottom: 12px;
   font-weight: 800;
 }
-
 input, textarea{
   width: 100%;
   padding: 12px 12px;
@@ -420,7 +428,7 @@ input:focus, textarea:focus{
 }
 .form button{ width: 100%; padding: 13px 16px; }
 
-/* Map placeholder */
+/* Map (když bude iframe, dej mu class responsive-map) */
 .map-placeholder{
   margin-top: 10px;
   border-radius: 16px;
@@ -435,15 +443,13 @@ input:focus, textarea:focus{
   position: relative;
   padding: 0;
 }
-
-.responsive-map {
+.responsive-map{
   width: 100%;
   height: 100%;
   min-height: 260px;
   border: none;
   display: block;
 }
-
 
 /* Footer */
 .site-footer{
@@ -465,16 +471,88 @@ input:focus, textarea:focus{
 }
 .footer a:hover{ color: #000; }
 
+/* ===== Lightbox ===== */
+.lightbox{
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+}
+.lightbox.active{ display: flex; }
+.lightbox img{
+  max-width: 92vw;
+  max-height: 90vh;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+.lightbox-close{
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  color: #fff;
+  font-size: 40px;
+  cursor: pointer;
+  user-select: none;
+}
+.lightbox-nav{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 50px;
+  cursor: pointer;
+  user-select: none;
+  padding: 0 20px;
+  transition: color 0.2s;
+  z-index: 10001;
+}
+.lightbox-nav:hover{ color: #fff; }
+.lightbox-prev{ left: 0; }
+.lightbox-next{ right: 0; }
+
 /* Responsive */
 @media (max-width: 980px){
   .two-col{ grid-template-columns: 1fr; }
   .cards{ grid-template-columns: repeat(2, minmax(0,1fr)); }
   .news{ grid-template-columns: 1fr; }
+
   .hero-arrow{ display:none; }
-  .menu{ display:none; } /* jednoduché schování menu na mobilu */
+  .menu{ display:none; } /* zatím */
   .hero-content{ padding-top: 110px; }
+  .hero-thumbs{ justify-content: flex-start; } /* mobil scroll */
 }
 
+/* Mobil: fotka “rozumně vidět” (celá), hero menší */
+@media (max-width: 640px){
+  .hero-slider{
+    height: clamp(460px, 68vh, 620px);
+  }
+
+  .slide{
+    background-size: contain;
+    background-position: center;
+    transform: none;
+    filter: none;
+  }
+  .slide.is-active{ animation: none; }
+
+  .hero-overlay{
+    background:
+      radial-gradient(900px 520px at 20% 30%, rgba(0,0,0,.20), transparent 62%),
+      linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.12), rgba(0,0,0,.60));
+  }
+
+  .thumb{
+    width: 92px;
+    height: 58px;
+  }
+}
+
+/* Extra small */
 @media (max-width: 560px){
   .cards{ grid-template-columns: 1fr; }
 
@@ -486,40 +564,3 @@ input:focus, textarea:focus{
   .gallery img:nth-child(5){ grid-column: span 6; }
   .gallery img:nth-child(6){ grid-column: span 6; aspect-ratio: 16/9; }
 }
-
-    .lightbox {
-      display: none;
-      position: fixed;
-      z-index: 10000;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.9);
-      justify-content: center;
-      align-items: center;
-    }
-    .lightbox.active { display: flex; }
-    .lightbox img { max-width: 90vw; max-height: 90vh; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
-    .lightbox-close {
-      position: absolute; top: 20px; right: 30px;
-      color: #fff; font-size: 40px; cursor: pointer; user-select: none;
-    }
-    .lightbox-nav {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      color: rgba(255, 255, 255, 0.8);
-      font-size: 50px;
-      cursor: pointer;
-      user-select: none;
-      padding: 0 20px;
-      transition: color 0.2s;
-      z-index: 10001;
-    }
-    .lightbox-nav:hover { color: #fff; }
-    .lightbox-prev { left: 0; }
-    .lightbox-next { right: 0; }
-
-    #historie .gallery img { cursor: pointer; transition: transform 0.2s; }
-    #historie .gallery img:hover { transform: scale(1.03); }
