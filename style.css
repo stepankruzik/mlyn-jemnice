@@ -161,6 +161,33 @@ p{ margin: 0 0 12px; }
   border-bottom: 1px solid var(--stroke);
 }
 
+@media (max-width: 700px) {
+  .hero-slider {
+    height: 60vw;
+    min-height: 220px;
+    max-height: 340px;
+  }
+  .hero-content {
+    padding: 36px 0 24px;
+    gap: 4px;
+  }
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+  .lead {
+    font-size: 0.98rem;
+    max-width: 90vw;
+  }
+  .kicker {
+    font-size: 0.92rem;
+    padding: 6px 10px;
+  }
+  .cta {
+    gap: 8px;
+  }
+}
+}
+
 .slides{ position: absolute; inset: 0; }
 .slide{
   position: absolute;
