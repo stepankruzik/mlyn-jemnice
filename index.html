@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mlýn Kasárníkův – Jemnice</title>
-  <meta name="description" content="Historický mlýn v Jemnici – nový život, prohlídky, akce a obnova poctivým řemeslem." />
+  <meta name="description" content="Webová kronika mlýna v Jemnici: archiv, rekonstrukce, byrokracie kolem vodního díla, videa, dílna a utopistické úmysly." />
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -21,35 +21,42 @@
         </span>
       </button>
 
-      <div class="mobile-menu">
-        <nav class="menu">
-          <a href="#o-mlyne">O mlýně</a>
-          <a href="#historie">Historie</a>
+      <!-- full-screen mobile menu (zobrazí se jen na mobilu přes CSS) -->
+      <div class="mobile-menu" aria-hidden="true">
+        <nav class="menu" aria-label="Hlavní navigace">
+          <a href="#o-mlyne">O webu</a>
           <a href="#kronika">Kronika</a>
-          <a href="#galerie">Galerie</a>
+          <a href="#byrokracie">Vodní dílo</a>
+          <a href="#historie">Historie v obrazech</a>
+          <a href="#archiv">Archiv & prameny</a>
+          <a href="#videa">Videa</a>
+          <a href="#utopie">Utopie</a>
+          <a href="#remeslo">Řemeslo</a>
+          <a href="#zapojte-se">Zapojte se</a>
           <a href="#kontakt">Kontakt</a>
         </nav>
       </div>
 
+      <!-- CTA necháme jen pro desktop (CSS schová na mobilu) -->
       <a class="btn btn-primary cta-desktop" href="#kontakt">Kontakt</a>
     </div>
   </header>
 
-  <!-- ===== HERO CAROUSEL (FULLSCREEN) ===== -->
+  <!-- ===== HERO CAROUSEL ===== -->
   <section class="hero-slider" id="top" aria-label="Úvodní galerie">
     <div class="slides">
-
-      <div class="slide is-active" style="background-image:url('img/cervenoMlynska05.png')"></div>
-      <div class="slide" style="background-image:url('img/cervenomlynska441.png')"></div>
-      <div class="slide" style="background-image:url('img/cervenomlynska361.png')"></div>
-      <div class="slide" style="background-image:url('img/cervenomlynska411.png')"></div>
-      <div class="slide" style="background-image:url('img/cervenomlynska272.png')"></div>
-      <div class="slide" style="background-image:url('img/cervenomlynska325.png')"></div>
-      <div class="slide" style="background-image:url('img/cervenomlynska224.png')"></div>
-       <div class="slide" style="background-image:url('img/cervenomlynska329.png')"></div>
-       <div class="slide" style="background-image:url('img/cervenomlynska413.png')"></div>
-       <div class="slide" style="background-image:url('img/cervenomlynska319.png')"></div>
-        <div class="slide" style="background-image:url('img/cervenomlynska363.png')"></div>
+      <!-- TIP: data-caption = popisek pro daný slide (lepší než captions pole) -->
+      <div class="slide is-active" style="background-image:url('img/cervenoMlynska05.png')" data-caption="Archiv • Mlýn Kasárníkův"></div>
+      <div class="slide" style="background-image:url('img/cervenomlynska441.png')" data-caption="Archiv • Areál mlýna"></div>
+      <div class="slide" style="background-image:url('img/cervenomlynska361.png')" data-caption="Archiv • Proměny v čase"></div>
+      <div class="slide" style="background-image:url('img/cervenomlynska411.png')" data-caption="Archiv • Okolí mlýna"></div>
+      <div class="slide" style="background-image:url('img/cervenomlynska272.png')" data-caption="Archiv • Detail / stav"></div>
+      <div class="slide" style="background-image:url('img/cervenomlynska325.png')" data-caption="Archiv • Detail / pohled"></div>
+      <div class="slide" style="background-image:url('img/cervenomlynska224.png')" data-caption="Archiv • Exteriér"></div>
+      <div class="slide" style="background-image:url('img/cervenomlynska329.png')" data-caption="Archiv • Exteriér"></div>
+      <div class="slide" style="background-image:url('img/cervenomlynska413.png')" data-caption="Archiv • Exteriér"></div>
+      <div class="slide" style="background-image:url('img/cervenomlynska319.png')" data-caption="Archiv • Exteriér"></div>
+      <div class="slide" style="background-image:url('img/cervenomlynska363.png')" data-caption="Archiv • Exteriér"></div>
     </div>
 
     <div class="hero-overlay"></div>
@@ -57,49 +64,96 @@
     <div class="hero-content container">
       <p class="kicker">Jemnice • Čarochův mlýn (402)</p>
       <h1>Mlýn Kasárníkův</h1>
-      <p class="lead">
-        Kronika místa, které se vrací k životu. Archivní fotografie, historie a obnova poctivým řemeslem.
-      </p>
 
-      <div class="cta">
-        <a class="btn btn-primary" href="#historie">Prohlédnout historii</a>
-        <a class="btn btn-ghost" href="#kronika">Kronika rekonstrukce</a>
+      <!-- CTA (desktop) – na mobilu se schová přes CSS -->
+      <div class="cta hero-cta">
+        <a class="btn btn-primary" href="#kronika">Číst kroniku</a>
+        <a class="btn btn-ghost" href="#historie">Prohlížet obrazy</a>
       </div>
 
       <div class="hero-meta">
-        <span id="heroCaption">1980 • Archivní snímek</span>
+        <span id="heroCaption">Archiv • Mlýn Kasárníkův</span>
       </div>
     </div>
 
     <button class="hero-arrow prev" aria-label="Předchozí fotografie">‹</button>
     <button class="hero-arrow next" aria-label="Další fotografie">›</button>
-
   </section>
 
   <main>
 
-    <!-- ===== O MLÝNĚ ===== -->
+    <!-- ===== O WEBU ===== -->
     <section id="o-mlyne" class="section">
       <div class="container two-col">
         <div>
-          <h2>O mlýně</h2>
+          <h2>O webu</h2>
           <p>
-            Krátký příběh: kde stojí, čím byl výjimečný, co se zachovalo a co je cílem obnovy.
+            Tenhle web nemá být katalog ani prospekt. Má být kronika.
           </p>
           <ul class="bullets">
-            <li>Historie a charakter místa</li>
-            <li>Obnova s respektem k původním prvkům</li>
-            <li>Prostor pro setkávání, klid i zážitky</li>
+            <li>Historické i současné fotografie</li>
+            <li>Prameny (archivy, památkáři, nalezené dokumenty)</li>
+            <li>Zápisky z obnovy a „vodního díla“ (zábavné i opruzné)</li>
+            <li>Časosběry a videa</li>
+            <li>Utopistické úmysly a pozvání pro bezemisné pocestné</li>
           </ul>
         </div>
 
         <div class="card">
-          <h3>Milníky</h3>
+          <h3>Rychlý rozcestník</h3>
           <ol class="timeline">
-            <li><span>2026</span> Koupeno a první zajištění objektu</li>
-            <li><span>2026</span> Rekonstrukční práce a dokumentace</li>
-            <li><span>2027</span> První termíny pro návštěvy / akce</li>
+            <li><span>Teď</span> Kronika a sběr pramenů</li>
+            <li><span>Brzy</span> Fotky od památkářů (září)</li>
+            <li><span>Dále</span> Vodní dílo + úřední epizody</li>
+            <li><span>Postupně</span> Dílna, videa, utopie</li>
           </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== KRONIKA ===== -->
+    <section id="kronika" class="section alt">
+      <div class="container">
+        <h2>Kronika / zápisky</h2>
+
+        <div class="news">
+          <article class="card">
+            <h3>Leden 2026 • Zajištění objektu</h3>
+            <p>První práce, úklid a mapování stavu. (doplňte fotky a poznámky)</p>
+          </article>
+          <article class="card">
+            <h3>Moravský zemský archiv • nález</h3>
+            <p>Krátký popis toho, co se našlo a proč to stojí za pozornost. (doplňte odkaz / scan)</p>
+          </article>
+          <article class="card">
+            <h3>Další epizoda</h3>
+            <p>Sem půjdou další zápisky – klidně i drobné. Hlavní je kontinuita.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== VODNÍ DÍLO / BYROKRACIE ===== -->
+    <section id="byrokracie" class="section">
+      <div class="container">
+        <h2>Vodní dílo a byrokracie</h2>
+        <p class="muted">
+          Jednotlivé kroky, formuláře a epizody.
+        </p>
+
+        <div class="news">
+          <article class="card">
+            <h3>Krok 1 • Zjistit, kdo co chce</h3>
+            <p>Seznam úřadů, povolení, stanoviska… (doplňte reálný postup)</p>
+          </article>
+          <article class="card">
+            <h3>Krok 2 • Papír snese všechno</h3>
+            <p>Ukázky komunikace, citace, poznámky, termíny. (doplňte)</p>
+          </article>
+          <article class="card">
+            <h3>Krok 3 • Výsledek</h3>
+            <p>Co z toho vylezlo a co bude dál. (doplňte)</p>
+          </article>
         </div>
       </div>
     </section>
@@ -113,104 +167,185 @@
         </p>
 
         <div class="gallery">
-          <img src="img/gallery/cervenoMlynska001.jpg" alt="19" />
-          <img src="img/gallery/cervenoMlynska003.jpg" alt="1950" />
-          <img src="img/gallery/cervenoMlynska005.jpg" alt="17.03.2017" />
-          <img src="img/gallery/cervenoMlynska007.jpg" alt="1904" />
-          <img src="img/gallery/cervenoMlynska009.jpg" alt="1950" />
-          <img src="img/gallery/cervenoMlynska224.jpg" alt="1937" />
-          <img src="img/gallery/cervenoMlynska226.jpg" alt="05.1980" />
-          <img src="img/gallery/cervenoMlynska228.jpg" alt="19" />
-          <img src="img/gallery/cervenoMlynska230.jpg" alt="1950" />
-          <img src="img/gallery/cervenoMlynska270.jpg" alt="1960" />
-          <img src="img/gallery/cervenomlynska272.jpg" alt="1960" />
-          <img src="img/gallery/cervenomlynska307.jpg" alt="10.01.2015" />
-          <img src="img/gallery/cervenomlynska309.jpg" alt="10.01.2015" />
-          <img src="img/gallery/cervenomlynska310.jpg" alt="15.02.2015" />
-          <img src="img/gallery/cervenomlynska317.jpg" alt="1950" />
-          <img src="img/gallery/cervenoMlynska319.jpg" alt="1940" />
-          <img src="img/gallery/cervenoMlynska323.jpg" alt="1940" />
-          <img src="img/gallery/cervenoMlynska325.jpg" alt="1947" />
-          <img src="img/gallery/cervenoMlynska327.jpg" alt="1950" />
-          <img src="img/gallery/cervenoMlynska329.jpg" alt="04.1949" />
-          <img src="img/gallery/cervenoMlynska331.jpg" alt="12.1950" />
-          <img src="img/gallery/cervenoMlynska357.jpg" alt="1904" />
-          <img src="img/gallery/cervenoMlynska361.jpg" alt="1942" />
-          <img src="img/gallery/cervenomlynska363.jpg" alt="1952" />
-          <img src="img/gallery/cervenomlynska405.jpg" alt="05.1980" />
-          <img src="img/gallery/cervenomlynska407.jpg" alt="05.1980" />
-          <img src="img/gallery/cervenomlynska411.jpg" alt="04.1990" />
-          <img src="img/gallery/cervenomlynska413.jpg" alt="04.1990" />
-          <img src="img/gallery/cervenomlynska425.jpg" alt="1937" />
-          <img src="img/gallery/cervenomlynska431.jpg" alt="1955" />
-          <img src="img/gallery/cervenomlynska433.jpg" alt="195" />
-          <img src="img/gallery/cervenomlynska435.jpg" alt="1958" />
-          <img src="img/gallery/cervenomlynska437.jpg" alt="1960" />
-          <img src="img/gallery/cervenomlynska439.jpg" alt="1960" />
-          <img src="img/gallery/cervenomlynska441.jpg" alt="06.1961" />
-          <img src="img/gallery/cervenomlynska475.jpg" alt="1940" />
+          <img src="img/gallery/cervenoMlynska001.jpg" alt="Archivní fotografie 1" />
+          <img src="img/gallery/cervenoMlynska003.jpg" alt="Archivní fotografie 2" />
+          <img src="img/gallery/cervenoMlynska005.jpg" alt="Archivní fotografie 3" />
+          <img src="img/gallery/cervenoMlynska007.jpg" alt="Archivní fotografie 4" />
+          <img src="img/gallery/cervenoMlynska009.jpg" alt="Archivní fotografie 5" />
+          <img src="img/gallery/cervenoMlynska224.jpg" alt="Archivní fotografie 6" />
+          <img src="img/gallery/cervenoMlynska226.jpg" alt="Archivní fotografie 7" />
+          <img src="img/gallery/cervenoMlynska228.jpg" alt="Archivní fotografie 8" />
+          <img src="img/gallery/cervenoMlynska230.jpg" alt="Archivní fotografie 9" />
+          <img src="img/gallery/cervenoMlynska270.jpg" alt="Archivní fotografie 10" />
+          <img src="img/gallery/cervenomlynska272.jpg" alt="Archivní fotografie 11" />
+          <img src="img/gallery/cervenomlynska307.jpg" alt="Archivní fotografie 12" />
+          <img src="img/gallery/cervenomlynska309.jpg" alt="Archivní fotografie 13" />
+          <img src="img/gallery/cervenomlynska310.jpg" alt="Archivní fotografie 14" />
+          <img src="img/gallery/cervenomlynska317.jpg" alt="Archivní fotografie 15" />
+          <img src="img/gallery/cervenoMlynska319.jpg" alt="Archivní fotografie 16" />
+          <img src="img/gallery/cervenoMlynska323.jpg" alt="Archivní fotografie 17" />
+          <img src="img/gallery/cervenoMlynska325.jpg" alt="Archivní fotografie 18" />
+          <img src="img/gallery/cervenoMlynska327.jpg" alt="Archivní fotografie 19" />
+          <img src="img/gallery/cervenoMlynska329.jpg" alt="Archivní fotografie 20" />
+          <img src="img/gallery/cervenoMlynska331.jpg" alt="Archivní fotografie 21" />
+          <img src="img/gallery/cervenoMlynska357.jpg" alt="Archivní fotografie 22" />
+          <img src="img/gallery/cervenoMlynska361.jpg" alt="Archivní fotografie 23" />
+          <img src="img/gallery/cervenomlynska363.jpg" alt="Archivní fotografie 24" />
+          <img src="img/gallery/cervenomlynska405.jpg" alt="Archivní fotografie 25" />
+          <img src="img/gallery/cervenomlynska407.jpg" alt="Archivní fotografie 26" />
+          <img src="img/gallery/cervenomlynska411.jpg" alt="Archivní fotografie 27" />
+          <img src="img/gallery/cervenomlynska413.jpg" alt="Archivní fotografie 28" />
+          <img src="img/gallery/cervenomlynska425.jpg" alt="Archivní fotografie 29" />
+          <img src="img/gallery/cervenomlynska431.jpg" alt="Archivní fotografie 30" />
+          <img src="img/gallery/cervenomlynska433.jpg" alt="Archivní fotografie 31" />
+          <img src="img/gallery/cervenomlynska435.jpg" alt="Archivní fotografie 32" />
+          <img src="img/gallery/cervenomlynska437.jpg" alt="Archivní fotografie 33" />
+          <img src="img/gallery/cervenomlynska439.jpg" alt="Archivní fotografie 34" />
+          <img src="img/gallery/cervenomlynska441.jpg" alt="Archivní fotografie 35" />
+          <img src="img/gallery/cervenomlynska475.jpg" alt="Archivní fotografie 36" />
         </div>
       </div>
     </section>
 
-    <!-- ===== KRONIKA ===== -->
-    <section id="kronika" class="section alt">
+    <!-- ===== ARCHIV & PRAMENY ===== -->
+    <section id="archiv" class="section">
+      <div class="container two-col">
+        <div>
+          <h2>Archiv & prameny</h2>
+          <p class="muted">
+            Všechno, co má zdroj: archivy, památkáři, nalezené dokumenty, odkazy.
+          </p>
+          <ul class="bullets">
+            <li>Moravský zemský archiv (scan / odkaz)</li>
+            <li>Materiály památkářů (září – čekáme)</li>
+            <li>Další zdroje: mapy, listiny, kroniky, vzpomínky</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Odkazy (placeholder)</h3>
+          <ol class="timeline">
+            <li><span>MZA</span> popis + odkaz</li>
+            <li><span>Památkáři</span> popis + odkaz</li>
+            <li><span>Další</span> popis + odkaz</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== VIDEA ===== -->
+   <!-- <section id="videa" class="section alt">
       <div class="container">
-        <h2>Kronika rekonstrukce</h2>
+        <h2>Videa / časosběry</h2>
+        <p class="muted">Jednotlivé fáze rekonstrukce../p>
+
+        <div class="news">
+          <article class="card">
+            <h3>Časosběr • Fáze 1</h3>
+            <p>Sem přijde video (YouTube/Vimeo) nebo MP4. (placeholder)</p>
+          </article>
+          <article class="card">
+            <h3>Časosběr • Fáze 2</h3>
+            <p>Sem přijde video. (placeholder)</p>
+          </article>
+          <article class="card">
+            <h3>Krátké záznamy</h3>
+            <p>Drobná videa z průběhu. (placeholder)</p>
+          </article>
+        </div>
+      </div>
+    </section>-->
+
+    <!-- ===== UTOPIE ===== -->
+   <!-- <section id="utopie" class="section">
+      <div class="container two-col">
+        <div>
+          <h2>Utopistické úmysly</h2>
+          <p>
+            Přespání pro pocestné, tuláky, cyklisty… pro ty, kdo se pohybují po světě bezemisně.
+            Bez sprchy = bezúplatně. (Pozor na formulace: žádné zavádění.)
+          </p>
+          <p class="muted">
+            Záměr je v množině úmyslů utopistických — pěstovat, rozvíjet a nepřehlížet.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Jak to chápat</h3>
+          <ul class="bullets">
+            <li>Nejde o hotel ani booking</li>
+            <li>Jde o jednoduché přespání „za hubičku“ = bezúplatně</li>
+            <li>Pravidla a možnost domluvy doplníme</li>
+          </ul>
+        </div>
+      </div>
+    </section>-->
+
+    <!-- ===== ŘEMESLO ===== -->
+    <section id="remeslo" class="section alt">
+      <div class="container">
+        <h2>Řemeslo & dílna</h2>
         <p class="muted">
-          Postup prací, fotky z obnovy a plány do budoucna. Přibývá postupně.
+          V části, kde měla být fabrika na lisování plastů, může vzniknout truhlářská dílna. Stroje, dřevo, práce, opravy.
         </p>
 
         <div class="news">
           <article class="card">
-            <h3>Leden 2026</h3>
-            <p>První práce na zajištění objektu a úklid.</p>
+            <h3>Dílna • záměr</h3>
+            <p>Co tam bude, jaké stroje, jaký účel. (doplňte)</p>
           </article>
           <article class="card">
-            <h3>Březen 2026</h3>
-            <p>Dokumentace stavu, plán rekonstrukce a příprava materiálu.</p>
+            <h3>Materiál • dřevo</h3>
+            <p>Co se kde sežene, co se zachrání, co se vyrobí. (doplňte)</p>
           </article>
           <article class="card">
-            <h3>Další kroky</h3>
-            <p>Opravy dřevěných částí, střecha, okolí a příprava na prohlídky.</p>
+            <h3>Práce • postupně</h3>
+            <p>Výstupy a drobné projekty. (doplňte)</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ===== GALERIE ===== -->
-    <section id="galerie" class="section">
-      <div class="container">
-        <h2>Galerie</h2>
-        <p class="muted">Exteriér • interiér • detaily • okolí Jemnice</p>
+    <!-- ===== ZAPOJTE SE ===== -->
+    <section id="zapojte-se" class="section">
+      <div class="container two-col">
+        <div>
+          <h2>Zapojte se</h2>
+          <p>
+            Pokud Vás mlýn něčím chytne a máte chuť přiložit ruku, vědomost nebo prostředek,
+            napište. I malá pomoc může být velká.
+          </p>
+          <p class="muted">Nejde o uznání. Jde o renesanci místa.</p>
+        </div>
 
-        <div class="gallery">
-          <img src="img/gallery-1.jpg" alt="Galerie 1" />
-          <img src="img/gallery-2.jpg" alt="Galerie 2" />
-          <img src="img/gallery-3.jpg" alt="Galerie 3" />
-          <img src="img/gallery-4.jpg" alt="Galerie 4" />
-          <img src="img/gallery-5.jpg" alt="Galerie 5" />
-          <img src="img/gallery-6.jpg" alt="Galerie 6" />
+        <div class="card">
+          <h3>Co se hodí</h3>
+          <ul class="bullets">
+            <li>Historické materiály, fotografie, vzpomínky</li>
+            <li>Řemesla a praktická pomoc</li>
+            <li>Rady k vodnímu dílu, povolením, technice</li>
+          </ul>
+          <p class="tiny muted">Kontakt je dole — nebo rovnou napište email.</p>
         </div>
       </div>
     </section>
 
     <!-- ===== KONTAKT ===== -->
-    <section id="kontakt" class="section">
+    <section id="kontakt" class="section alt">
       <div class="container two-col">
         <div>
           <h2>Kontakt</h2>
-          <p><strong>Zbyněk</strong></p>
-          <p><strong>Adresa:</strong> doplň přesnou adresu / popis příjezdu</p>
-          <p><strong>Telefon:</strong> +420 …</p>
-          <p><strong>Email:</strong> …</p>
+          <p><strong>Zbyněk Burian</strong></p>
+          <p><strong>Adresa:</strong> Červenomlýnská 402, 675 31 Jemnice</p>
+          <p><strong>Telefon:</strong> +420 777 339 337</p>
+          <p><strong>Email:</strong> zbynekburi@seznam.cz</p>
           <p><strong>Sociální sítě:</strong> Facebook / Instagram</p>
         </div>
 
         <div class="card">
           <h3>Mapa</h3>
           <div class="map-placeholder">
-            <iframe class="responsive-map" style="border:none; width:100%; height:80%; min-height:260px;" src="https://mapy.com/s/lacekuheta" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe class="responsive-map" src="https://mapy.com/s/lacekuheta" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
       </div>
@@ -218,11 +353,11 @@
 
   </main>
 
-  <!-- ===== LIGHTBOX (MODÁLNÍ OKNO) ===== -->
-  <div id="lightbox" class="lightbox">
-    <span class="lightbox-close">&times;</span>
-    <span class="lightbox-nav lightbox-prev">&#10094;</span>
-    <span class="lightbox-nav lightbox-next">&#10095;</span>
+  <!-- ===== LIGHTBOX ===== -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <span class="lightbox-close" aria-label="Zavřít">&times;</span>
+    <span class="lightbox-nav lightbox-prev" aria-label="Předchozí">&#10094;</span>
+    <span class="lightbox-nav lightbox-next" aria-label="Další">&#10095;</span>
     <img id="lightbox-img" src="" alt="Zvětšená fotografie">
   </div>
 
@@ -245,35 +380,24 @@
     const prevBtn = document.querySelector(".hero-arrow.prev");
     const nextBtn = document.querySelector(".hero-arrow.next");
 
-    const captions = [
-      "1980 • Archivní snímek",
-      "Fotografie • Exteriér mlýna",
-      "Fotografie • Areál mlýna",
-      "Fotografie • Detail / okolí",
-      "Fotografie • Detail / okolí"
-    ];
-
     let i = 0;
     let timer = null;
 
     function show(index){
       slides.forEach(s => s.classList.remove("is-active"));
-      slides[index].classList.add("is-active");
-      if (captionEl) captionEl.textContent = captions[index] ?? "";
+      const slide = slides[index];
+      slide.classList.add("is-active");
+      const cap = slide.getAttribute("data-caption") || "";
+      if (captionEl) captionEl.textContent = cap;
       i = index;
     }
 
-    function next(){
-      show((i + 1) % slides.length);
-    }
-
-    function prev(){
-      show((i - 1 + slides.length) % slides.length);
-    }
+    function next(){ show((i + 1) % slides.length); }
+    function prev(){ show((i - 1 + slides.length) % slides.length); }
 
     function start(){
       stop();
-      timer = setInterval(next, 6500); // rychlost přepínání
+      timer = setInterval(next, 6500);
     }
 
     function stop(){
@@ -300,7 +424,6 @@
     const prevBtnLb = document.querySelector('.lightbox-prev');
     const nextBtnLb = document.querySelector('.lightbox-next');
 
-    // Vybereme pouze obrázky v sekci #historie
     const historyImages = Array.from(document.querySelectorAll('#historie .gallery img'));
     let currentIndex = 0;
 
@@ -310,19 +433,27 @@
       lightboxImg.alt = img.alt;
     }
 
+    function openLightbox(index){
+      currentIndex = index;
+      updateLightbox();
+      lightbox.classList.add('active');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(){
+      lightbox.classList.remove('active');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
     historyImages.forEach((img, index) => {
-      img.addEventListener('click', () => {
-        currentIndex = index;
-        updateLightbox();
-        lightbox.classList.add('active');
-      });
+      img.addEventListener('click', () => openLightbox(index));
     });
 
     const showPrev = (e) => { if(e) e.stopPropagation(); currentIndex = (currentIndex - 1 + historyImages.length) % historyImages.length; updateLightbox(); };
     const showNext = (e) => { if(e) e.stopPropagation(); currentIndex = (currentIndex + 1) % historyImages.length; updateLightbox(); };
 
-    const closeLightbox = () => lightbox.classList.remove('active');
-    
     closeBtn?.addEventListener('click', closeLightbox);
     prevBtnLb?.addEventListener('click', showPrev);
     nextBtnLb?.addEventListener('click', showNext);
@@ -330,11 +461,13 @@
     lightbox?.addEventListener('click', (e) => {
       if (e.target === lightbox) closeLightbox();
     });
+
     document.addEventListener('keydown', (e) => {
-      if (!lightbox.classList.contains('active')) return;
-      if (e.key === 'Escape') closeLightbox();
-      if (e.key === 'ArrowLeft') showPrev();
-      if (e.key === 'ArrowRight') showNext();
+      if (lightbox.classList.contains('active')) {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') showPrev();
+        if (e.key === 'ArrowRight') showNext();
+      }
     });
 
     // HAMBURGER MENU
@@ -342,20 +475,32 @@
     const mobileMenu = document.querySelector('.mobile-menu');
     const menuLinks = document.querySelectorAll('.mobile-menu .menu a');
 
+    function openMenu(){
+      hamburger.classList.add('is-active');
+      mobileMenu.classList.add('is-active');
+      hamburger.setAttribute('aria-expanded', 'true');
+      mobileMenu.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu(){
+      hamburger.classList.remove('is-active');
+      mobileMenu.classList.remove('is-active');
+      hamburger.setAttribute('aria-expanded', 'false');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
     hamburger?.addEventListener('click', () => {
-      hamburger.classList.toggle('is-active');
-      mobileMenu.classList.toggle('is-active');
-      document.body.style.overflow = mobileMenu.classList.contains('is-active') ? 'hidden' : '';
+      const isOpen = mobileMenu.classList.contains('is-active');
+      isOpen ? closeMenu() : openMenu();
     });
 
-    menuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('is-active');
-        mobileMenu.classList.remove('is-active');
-        document.body.style.overflow = '';
-      });
-    });
+    menuLinks.forEach(link => link.addEventListener('click', closeMenu));
 
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('is-active')) closeMenu();
+    });
   </script>
 
 </body>
