@@ -564,7 +564,13 @@ p{ margin: 0 0 12px; }
   .two-col{ grid-template-columns: 1fr; }
   .news{ grid-template-columns: 1fr; }
 
-  .hero-arrow{ display:none; }
+  .hero-arrow{
+    display: grid;
+    width: 42px;
+    height: 42px;
+    font-size: 24px;
+    background: rgba(0,0,0,.35);
+  }
   .hero-content{ padding-top: 110px; }
 
   .hamburger{ display: block; }
@@ -639,4 +645,22 @@ p{ margin: 0 0 12px; }
 @media (max-width: 420px){
   .nav{ gap: 10px; }
   .logo{ font-size: 1.05rem; }
+}
+/* ===== LIGHTBOX arrows mobile fix ===== */
+@media (max-width: 980px){
+
+  .lightbox-nav{
+    display: grid;
+    width: 48px;
+    height: 48px;
+    font-size: 34px;
+    background: rgba(0,0,0,.45);
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .lightbox-prev{ left: 10px; }
+  .lightbox-next{ right: 10px; }
+
 }

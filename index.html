@@ -420,6 +420,27 @@
 
   showHero(0);
   startHero();
+  // ===== HERO swipe (mobil)
+let touchStartX = 0;
+let touchStartY = 0;
+
+hero?.addEventListener("touchstart", (e) => {
+  const t = e.touches[0];
+  touchStartX = t.clientX;
+  touchStartY = t.clientY;
+}, { passive: true });
+
+hero?.addEventListener("touchend", (e) => {
+  const t = e.changedTouches[0];
+  const dx = t.clientX - touchStartX;
+  const dy = t.clientY - touchStartY;
+
+  if (Math.abs(dy) > Math.abs(dx)) return;
+
+  if (dx > 40) { prevHero(); startHero(); }
+  if (dx < -40) { nextHero(); startHero(); }
+
+}, { passive: true });
 
   // ===== AUTO CAPTIONS pod obrázky (figure + figcaption)
   // vytvoří kolem každého <img> wrapper <figure> + <figcaption>
@@ -449,6 +470,8 @@
     });
   }
   enhanceGalleryCaptions();
+
+  
 
   // ===== LIGHTBOX + ZOOM (lupa) — GROUPED (nemíchá sekce/galerie)
   const lightbox = document.getElementById('lightbox');
