@@ -638,10 +638,20 @@ lightboxStage.addEventListener('touchend', (e)=>{
 const hamburger = document.querySelector('.hamburger');
 const mobileMenu = document.querySelector('.mobile-menu');
 
+function closeMenu(){
+  mobileMenu.classList.remove('is-active');
+  hamburger.classList.remove('is-active');
+}
+
 hamburger.onclick = ()=>{
   mobileMenu.classList.toggle('is-active');
   hamburger.classList.toggle('is-active');
 };
+
+
+document.querySelectorAll('.mobile-menu a').forEach(link => {
+  link.addEventListener('click', closeMenu);
+});
 
 // ===== KEYBOARD OVLÁDÁNÍ (šipky + escape)
 document.addEventListener('keydown', (e) => {

@@ -664,3 +664,24 @@ p{ margin: 0 0 12px; }
   .lightbox-next{ right: 10px; }
 
 }
+/* ===== FIX: zákaz double tap zoom + lepší ovládání */
+.gallery img,
+.lightbox-stage {
+  touch-action: manipulation;
+}
+
+/* ===== FIX: zabrání "dragování" obrázků */
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+/* ===== FIX: lepší scroll + UX na mobilu */
+body {
+  touch-action: manipulation;
+}
+
+/* ===== optional: jemnější klikání */
+button, a {
+  touch-action: manipulation;
+}
