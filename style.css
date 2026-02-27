@@ -685,3 +685,100 @@ body {
 button, a {
   touch-action: manipulation;
 }
+/* ================================
+   HAMBURGER – čisté 3 čáry -> X
+   (dej na konec style.css)
+================================ */
+
+/* tlačítko */
+.hamburger{
+  background: transparent;
+  border: 0;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* box */
+.hamburger-box{
+  width: 28px;
+  height: 20px;
+  display: inline-block;
+  position: relative;
+}
+
+/* prostřední čára */
+.hamburger-inner{
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 3px;
+  background: var(--ink);   /* DŮLEŽITÉ: tady barva */
+  border-radius: 999px;
+  transform: translateY(-50%);
+  transition: background .25s ease, transform .25s ease;
+}
+
+/* horní + dolní čára */
+.hamburger-inner::before,
+.hamburger-inner::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--ink);   /* barva tady */
+  border-radius: 999px;
+  transition: transform .25s ease, top .25s ease;
+}
+
+.hamburger-inner::before{ top: -8px; }
+.hamburger-inner::after{ top: 8px; }
+
+/* ACTIVE -> X */
+.hamburger.is-active .hamburger-inner{
+  background: transparent;  /* prostřední zmizí */
+}
+
+.hamburger.is-active .hamburger-inner::before{
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.hamburger.is-active .hamburger-inner::after{
+  top: 0;
+  transform: rotate(-45deg);
+}
+/* ===== HAMBURGER OVERRIDE: opraví "jen čára" (přebije staré rules) ===== */
+
+/* výchozí stav */
+.hamburger .hamburger-inner{
+  transform: translateY(-50%) !important;
+  background: var(--ink) !important;
+}
+.hamburger .hamburger-inner::before{
+  top: -8px !important;
+  transform: none !important;
+  opacity: 1 !important;
+}
+.hamburger .hamburger-inner::after{
+  top: 8px !important;
+  transform: none !important;
+  opacity: 1 !important;
+}
+
+/* active = X */
+.hamburger.is-active .hamburger-inner{
+  background: transparent !important;          
+  transform: translateY(-50%) !important;      
+}
+.hamburger.is-active .hamburger-inner::before{
+  top: 0 !important;
+  transform: rotate(45deg) !important;
+  opacity: 1 !important;
+}
+.hamburger.is-active .hamburger-inner::after{
+  top: 0 !important;
+  transform: rotate(-45deg) !important;
+  opacity: 1 !important;                       
+}
