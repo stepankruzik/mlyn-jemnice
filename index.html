@@ -15,15 +15,31 @@
     <div class="container nav">
       <a class="logo" href="#top">Červený mlýn</a>
 
-      <button class="hamburger" aria-label="Otevřít menu" aria-expanded="false">
-        <span class="hamburger-box">
-          <span class="hamburger-inner"></span>
-        </span>
-      </button>
+      <nav class="menu desktop-menu" aria-label="Hlavní navigace">
+        <a href="#pribeh">Úvod</a>
+        <a href="#o-mlyne">O webu</a>
+        <a href="#kronika">Kronika</a>
+        <a href="#historie">Historie</a>
+        <a href="#mza">Prameny</a>
+        <a href="#remeslo">Řemeslo</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="hamburger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
+
+        <!-- CTA necháme jen pro desktop (CSS schová na mobilu) -->
+        <a class="btn btn-primary cta-desktop" href="#kontakt">Kontakt</a>
+      </div>
 
       <!-- full-screen mobile menu (zobrazí se jen na mobilu přes CSS) -->
-      <div class="mobile-menu" aria-hidden="true">
+      <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
         <nav class="menu" aria-label="Hlavní navigace">
+          <a href="#pribeh">Úvod</a>
           <a href="#o-mlyne">O webu</a>
           <a href="#kronika">Kronika</a>
           <a href="#byrokracie">Vodní dílo</a>
@@ -35,9 +51,6 @@
           <a href="#kontakt">Kontakt</a>
         </nav>
       </div>
-
-      <!-- CTA necháme jen pro desktop (CSS schová na mobilu) -->
-      <a class="btn btn-primary cta-desktop" href="#kontakt">Kontakt</a>
     </div>
   </header>
 
@@ -59,26 +72,80 @@
 
     <div class="hero-overlay"></div>
 
-    <div class="hero-content container">
-      <h1>Červený mlýn</h1>
+    <!--<div class="hero-content container">
+      <div class="hero-panel">
+        <p class="hero-kicker">Jemnice • webová kronika obnovy</p>
+        <h1>Červený mlýn</h1>
+        <p class="hero-lead">
+          Archiv, prameny, zápisky z rekonstrukce i plány do budoucna — jedno místo pro příběh
+          mlýna a lidí kolem něj.
+        </p>
 
-      <!-- CTA (desktop) – na mobilu se schová přes CSS -->
-      <div class="cta hero-cta">
-        <a class="btn btn-primary" href="#kronika">Číst kroniku</a>
-        <a class="btn btn-ghost" href="#historie">Prohlížet obrazy</a>
-      </div>
+        <div class="cta hero-cta">
+          <a class="btn btn-primary" href="#kronika">Číst kroniku</a>
+          <a class="btn btn-ghost" href="#historie">Prohlížet obrazy</a>
+        </div>
 
-      <div class="hero-meta">
-        <span id="heroCaption">Archiv • Červený mlýn</span>
+        <div class="hero-meta">
+          <span id="heroCaption">Archiv • Červený mlýn</span>
+        </div>
       </div>
-    </div>
+    </div>-->
 
     <button class="hero-arrow prev" aria-label="Předchozí fotografie">‹</button>
     <button class="hero-arrow next" aria-label="Další fotografie">›</button>
   </section>
 
   <main>
+<section id="pribeh" class="section">
+  <div class="container">
+    <div class="story-header" style="text-align: center; margin-bottom: 40px;">
+      <p class="hero-kicker" style="color: var(--wood);">Z rodinné kroniky</p>
+      <h2>Rodinná vzpomínka z historie</h2>
+    </div>
 
+    <div class="two-col story-layout">
+      <div class="story-text-area">
+        <p class="lead-p">V této vzpomínce se budu zabývat historií své rodiny, přiblížím první dochovanou informaci o ní, jak se dostala do města, z kterého pochází můj otec a ve kterém stále žije můj dědeček a babička. Krátce zmíním, jak se jí dařilo během jejich nejlepších, i nejhorších časů. Rozepíšu konkrétní vzpomínku a událost, která se stala mému pradědečkovi.</p>
+
+        <p>Když jsem si sháněl nějaké podklady pro tuto práci, zjistil jsem, že naše rodina má uschovanou rodinou kroniku. V ní jsou dochovány informace už z roku <strong>1609</strong>, kdy můj předek, <strong>Jan Václav Kasárník</strong> v Kardašově Řečici vlastnil statek a k němu příslušná pole. V kronice je zmíněné i jméno <strong>Ondřeje Kasárníka</strong>, jako váženého měšťana Kardašovy Řečice, hospodáře a majitele celé usedlosti. Soudíme tedy, že naše rodina musela patřit k těm více významným rodinám v daném městě.</p>
+
+        <p>V roce <strong>1835</strong> se rodina Kasárníkova odstěhovala z Kardašovy Řečice do Jemnice, prodali svůj rodný statek a odkoupili od hraběte Pallaviciniho mlýn, který nesl jméno <strong>Červený</strong>. Hrabě Pallavicini si rodinu oblíbil a dal jí na přestavbu a renovaci celého mlýna stavební řezivo zdarma. A tak se mlýn postupnými kroky opravil, zmodernizoval a dal do provozu, čímž rodině zajišťoval finance a střechu nad hlavou. Rodina hraběti odváděla část výdělků.</p>
+
+        <p>Mlýn a celá usedlost začaly vzkvétat. Do usedlosti se sjížděli zemědělci z celého okolí Jemnice pro namletí. Konec 19. století byl pro naši rodinu opravdu pokrokovým a velmi výdělečným. Vše zkazila <strong>První světová válka</strong>. V roce 1914 byli nuceni do armády narukovat všichni muži ve věku a neminulo to ani naši rodinu. Odešli celkem tři mužští potomci. V kronice jsou i původní dopisy mých předků. Bojovali převážně na Východní a Italské frontě. Domů se vrátil pouze jeden, a to <strong>Jan Kasárník</strong>. Během války byl mlýn nucen odvádět pravidelné dávky armádě a obyvatelstvu, takže se jeho produkce úplně nezastavila.</p>
+
+        <p>Se vznikem republiky se vše vrátilo do původního stavu. Jan do mlýna opět přivedl finance a dokázal tak zabezpečit rodinu, narodilo se mu celkově šest dětí. Mlýn přebral jeho nejmladší potomek <strong>Bohumil Kasárník</strong> v roce 1930. S nástupem nacismu byl mlýn nucen odvádět pravidelné dávky wehrmachtu a protektorátu, byli nuceni spolupracovat, jinak by si odvedli celou rodinu.</p>
+
+        <div class="quote-box">
+          <p>„Bohumil během první republiky mlýn kompletně zmodernizoval. Postavil zde pilu, nechal vybudovat sádky a prodával ryby. Rodině se opravdu dařilo a patřila mezi nejbohatší v Jemnici.“</p>
+        </div>
+
+        <p>Nyní už se dostávám k samotné vzpomínce na svého pradědu, Bohumila Kasárníka. Druhá světová válka rodinou nijak zvlášť nezacloumala, protože byl mlýn pro wehrmacht důležitý, nechali rodinu na pokoji za podmínky, že bude odvádět dávky armádě a protektorátu. Praděda ovšem ale pomáhal i místní skupině odboje nacistického režimu, dodával potraviny a oblečení místnímu partyzánskému oddílu.</p>
+
+        <p>Po válce to vypadalo s mlýnem dobře, praděda plánoval další modernizace technologie mlýna a zakoupení potřebných pozemků na hospodaření. Opravil i rybník a každoročně pořádal vánoční rybí trhy. Nastal ale <strong>rok 1948</strong> a znárodňování a kolektivizace soukromého majetku. Praděda o svůj majetek zprvu úspěšně bojoval, využil svého vlivu v městském národním výboru a chvíli se mu i skutečně dařilo si pozemky a mlýn „ponechat“ ve funkci správce. Ke konci roku 1948 ale na základě udání a naprosto zkreslených údajů byl praděda jako „podvratný živel“ státní bezpečností zatčen. Půl roku byl ve vyšetřovací vazbě a roku 1949 v létě byl odsouzen.</p>
+
+        <p>Odsoudili ho na 2 roky žaláře, za údajné podvody při nahlašování a správě státního majetku. Mlýn a veškeré pozemky byly neoprávněně a účelově podle chybně zvoleného zákona znárodněny. Prosperující mlýn se velmi rychle změnil na mísírnu krmiv hospodářského dobytka. Prababička musela zaplatit nájem za bydlení od pradědova zatčení zpětně a dál platit zvýšený nájem jako nespolehlivá osoba, aby rodina mohla vůbec ve mlýně bydlet a setrvat. O prosperující a provozně spolehlivou pilu poháněnou vodní turbínou se budovatelé socialismu postarali demontáží technologie a odvozem do sběrných surovin. Po propuštění mohl praděda pracovat pouze jako noční vrátný v JZD a dále jako noční topič v závodě oděvního podniku Otavan. Vlivem podlomeného zdraví jednak z vězení a jednak velmi náročné noční práce v roce 1973 zemřel. Jeho syn, můj nynější děda s rodinou žili do roku 1985 v bývalém mlýně, ale po odkoupení a přestavění bývalého mlýnského výměnku se nakonec odstěhovali.</p>
+
+        <p><strong>A tak dopadl mlýn a naše rodina. Dříve respektovaná po celé Jemnici a okolí. Nyní v domku a rádi, že se z mlýna odstěhovali. Poděkovat můžeme komunistům a jejich báječnému plánu nás zbavit toho, co nás živilo a drželo.</strong></p>
+        <p><strong>Ondřej Kasárník</strong></p>
+      </div>
+
+      <aside class="story-sidebar">
+        <div class="card">
+          <h3 style="margin-top:0">Klíčové milníky</h3>
+          <ul class="timeline">
+            <li><span>1609</span> Jan Václav Kasárník v Kardašově Řečici</li>
+            <li><span>1835</span> Přestěhování do Jemnice, koupě mlýna</li>
+            <li><span>1914</span> Tři muži odchází do války</li>
+            <li><span>1930</span> Správu přebírá Bohumil Kasárník</li>
+            <li><span>1948</span> Zatčení pradědy a znárodnění</li>
+            <li><span>1973</span> Úmrtí Bohumila Kasárníka</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
     <!-- ===== O WEBU ===== -->
     <section id="o-mlyne" class="section">
       <div class="container two-col">
@@ -203,7 +270,7 @@
      <!-- ===== ARCHIV & PRAMENY ===== -->
     <section id="mza" class="section">
       <div class="container">
-        <div class="container two-col">
+        <div class="two-col">
         <div>
           <h2>Archiv & prameny</h2>
           <p class="muted">Všechno, co má zdroj: archivy, památkáři, nalezené dokumenty, odkazy.</p>
@@ -225,7 +292,7 @@
       </div>
 
         <!-- dokumenty / skeny: vždy vidět celé -->
-        <h3 style="margin-top:18px;">Skeny (náhledy)</h3>
+        <h3 class="subsection-title">Skeny (náhledy)</h3>
         <div class="gallery doc-gallery">
           <img class="doc" src="img/mza/Archiv1.jpg" alt="MZA • Listina • 18xx" data-caption="MZA • Listina • rok "/>
           <img class="doc" src="img/mza/Archiv2.jpg" alt="MZA • Listina • 18xx" data-caption="MZA • Listina • rok "/>
@@ -252,7 +319,7 @@
           Samostatná kapitola mimo Jemnici. Mapy, plány, fotografie a poznámky k objektu.
         </p>
 
-        <h3 style="margin-top:18px;">Mapy / plány (náhledy)</h3>
+        <h3 class="subsection-title">Mapy / plány (náhledy)</h3>
         <div class="gallery doc-gallery">
           <!-- Mapy/plány: přidej class="doc" aby se chovaly jako dokument -->
           <img class="doc" src="img/rozkos/Cast0.jpg" alt="Rozkoš – plán 01" data-caption="Rozkoš • Plán 01, 22.10.1860" />
@@ -265,7 +332,7 @@
           
         </div>
 
-        <h3 style="margin-top:18px;">Fotografie / listiny (náhledy)</h3>
+        <h3 class="subsection-title">Fotografie / listiny (náhledy)</h3>
         <div class="gallery photo-gallery">
           <!-- “normální” fotky (ne mapy) -->
           <!-- příklad: -->
@@ -330,8 +397,8 @@
           <h2>Kontakt</h2>
           <p><strong>Zbyněk Burian</strong></p>
           <p><strong>Adresa:</strong> Červenomlýnská 402, 675 31 Jemnice</p>
-          <p><strong>Telefon:</strong> +420 777 339 337</p>
-          <p><strong>Email:</strong> zbynekburi@seznam.cz</p>
+          <p><strong>Telefon:</strong> <a class="contact-link" href="tel:+420777339337">+420 777 339 337</a></p>
+          <p><strong>Email:</strong> <a class="contact-link" href="mailto:zbynekburi@seznam.cz">zbynekburi@seznam.cz</a></p>
           <p><strong>Sociální sítě:</strong> Facebook / Instagram</p>
         </div>
 
@@ -339,6 +406,10 @@
           <h3>Mapa</h3>
           <div class="map-placeholder">
             <iframe class="responsive-map" src="https://mapy.com/s/lacekuheta" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="mailto:zbynekburi@seznam.cz">Napsat e-mail</a>
+            <a class="btn btn-ghost" href="tel:+420777339337">Zavolat</a>
           </div>
         </div>
       </div>
@@ -380,6 +451,11 @@
   <script>
  // ===== rok ve footeru
 document.getElementById("y").textContent = new Date().getFullYear();
+
+document.querySelectorAll('.gallery img').forEach(img => {
+  if (!img.hasAttribute('loading')) img.loading = 'lazy';
+  img.decoding = 'async';
+});
 
 // ===== HERO SLIDER
 const slides = Array.from(document.querySelectorAll(".slide"));
@@ -523,6 +599,7 @@ function openLightbox(index){
   setCaption(img);
 
   lightbox.classList.add('active');
+  lightbox.setAttribute('aria-hidden', 'false');
   document.body.style.overflow = 'hidden';
 
   resetView();
@@ -530,6 +607,7 @@ function openLightbox(index){
 
 function closeLightbox(){
   lightbox.classList.remove('active');
+  lightbox.setAttribute('aria-hidden', 'true');
   document.body.style.overflow = '';
 }
 
@@ -641,11 +719,17 @@ const mobileMenu = document.querySelector('.mobile-menu');
 function closeMenu(){
   mobileMenu.classList.remove('is-active');
   hamburger.classList.remove('is-active');
+  hamburger.setAttribute('aria-expanded', 'false');
+  mobileMenu.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('menu-open');
 }
 
 hamburger.onclick = ()=>{
-  mobileMenu.classList.toggle('is-active');
-  hamburger.classList.toggle('is-active');
+  const isOpen = mobileMenu.classList.toggle('is-active');
+  hamburger.classList.toggle('is-active', isOpen);
+  hamburger.setAttribute('aria-expanded', String(isOpen));
+  mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+  document.body.classList.toggle('menu-open', isOpen);
 };
 
 
@@ -653,8 +737,16 @@ document.querySelectorAll('.mobile-menu a').forEach(link => {
   link.addEventListener('click', closeMenu);
 });
 
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 980) closeMenu();
+});
+
 // ===== KEYBOARD OVLÁDÁNÍ (šipky + escape)
 document.addEventListener('keydown', (e) => {
+
+  if (e.key === 'Escape' && mobileMenu.classList.contains('is-active')) {
+    closeMenu();
+  }
 
   // funguje jen když je lightbox otevřený
   if (!lightbox.classList.contains('active')) return;
